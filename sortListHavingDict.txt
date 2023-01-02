@@ -1,0 +1,39 @@
+from datetime import date
+
+list = [
+{ 'name':'kanha',
+	'sem':'5',
+    'date':date(2002,9,4),
+    'address':'rau',
+},
+{ 'name':'mohit',
+	'sem':'0',
+    'date':date(2003,2,16),
+    'address':'vayal',
+},
+{ 'name':'laddu',
+	'sem':'3',
+    'date':date(2004,2,28),
+    'address':'barda',
+},
+
+{ 'name':'kuldeep',
+	'sem':'4',
+    'date':date(2003,6,3),
+    'address':'Ajanda',
+},
+
+]
+
+# way to sort python list having dictionaries
+def getDate(list):
+	return list['date']
+
+#  sorted list of dictionaries sort the data in this manner (2002, 9, 4) -> (2003, 2, 16) -> (2003, 6, 3) -> (2004, 2, 28)
+sortedLIst = sorted(list,key=getDate)
+
+# after sliced we get the last three dictionary (2003, 2, 16) -> (2003, 6, 3) -> (2004, 2, 28). And this three dictionary are the latest among all dictionary
+slicedList = sortedLIst[-3:]   # 
+# compare this two list data
+print(sortedLIst) 
+print(slicedList)
